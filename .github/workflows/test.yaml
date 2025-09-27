@@ -12,6 +12,13 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
     container: node:20-alpine
+    env:
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      GOOGLE_API_KEYFILE: /dev/null
+      WB_API_KEY: none
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -20,4 +27,6 @@ jobs:
       - name: Run lint
         run: npm run eslint
       - name: Run tests
-        run: npm run test
+        run: |
+          npm run build
+          npm run test
