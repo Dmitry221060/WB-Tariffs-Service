@@ -18,9 +18,7 @@ const envSchema = z.object({
         .string()
         .regex(/^[0-9]+$/)
         .transform((value) => parseInt(value)),
-    FORMAT_EXPORT: z
-        .enum(["true", "false"])
-        .transform((value) => value == "true"),
+    FORMAT_EXPORT: z.enum(["true", "false"]).transform((value) => value == "true"),
     APP_PORT: z.union([
         z.undefined(),
         z
