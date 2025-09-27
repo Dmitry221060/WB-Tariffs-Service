@@ -1,0 +1,34 @@
+{
+    "response": {
+        "data": {
+            "warehouseList": [
+                {
+                    "boxDeliveryBase": "48",
+                    "boxDeliveryCoefExpr": "160",
+                    "boxDeliveryLiter": "11,2",
+                    "boxDeliveryMarketplaceBase": "40",
+                    "boxDeliveryMarketplaceCoefExpr": "125",
+                    "boxDeliveryMarketplaceLiter": "11",
+                    "boxStorageBase": "0,14",
+                    "boxStorageCoefExpr": "115",
+                    "boxStorageLiter": "0,07",
+                    "geoName": "Центральный федеральный округ",
+                    "warehouseName": "Коледино"
+                },
+                {
+                    "boxDeliveryBase": "46",
+                    "boxDeliveryCoefExpr": "100",
+                    "boxDeliveryLiter": "14",
+                    "boxDeliveryMarketplaceBase": "46",
+                    "boxDeliveryMarketplaceCoefExpr": "100",
+                    "boxDeliveryMarketplaceLiter": "14",
+                    "boxStorageBase": "0,07",
+                    "boxStorageCoefExpr": "100",
+                    "boxStorageLiter": "0,07",
+                    "geoName": "Центральный федеральный округ",
+                    "warehouseName": "Ярославль СГТ"
+                }
+            ]
+        }
+    }
+}
