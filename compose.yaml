@@ -62,4 +62,9 @@ services:
         max-size: 10m
         max-file: 5
     command: [ "npm", "run", "start:prod" ]
+    healthcheck:
+      test: curl --fail http://localhost:${APP_PORT}/healthz
+      interval: 5s
+      timeout: 5s
+      retries: 20
     restart: unless-stopped
