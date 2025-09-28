@@ -6,6 +6,10 @@ volumes:
   postgres-vol:
     driver: local
 
+secrets:
+  google_service_account:
+    file: ${GOOGLE_API_KEYFILE}
+
 services:
   postgres:
     container_name: postgres
@@ -20,10 +24,6 @@ services:
       - postgres-vol:/var/lib/postgresql/data
     networks:
       - postgres-net
-    expose:
-      - ${POSTGRES_PORT}
-    ports:
-      - ${POSTGRES_PORT}:${POSTGRES_PORT}
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
       interval: 10s
@@ -37,6 +37,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    secrets:
+      - google_service_account
     environment:
       POSTGRES_HOST: postgres
       POSTGRES_PORT: ${POSTGRES_PORT}
@@ -45,7 +47,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       APP_PORT: ${APP_PORT}
       NODE_ENV: production
-      GOOGLE_API_KEYFILE: ${GOOGLE_API_KEYFILE}
+      GOOGLE_API_KEYFILE: /run/secrets/google_service_account
       WB_API_KEY: ${WB_API_KEY}
       WORKER_QUERY_INTERVAL: ${WORKER_QUERY_INTERVAL}
       FORMAT_EXPORT: ${FORMAT_EXPORT:-true}
