@@ -12,7 +12,7 @@
         "prettier": "prettier \"./{src,test}/**\" --check",
         "prettier-format": "prettier \"./{src,test}/**\" --write",
         "start": "nest start",
-        "start:prod": "node dist/app.js",
+        "start:prod": "node dist/main.js",
         "test": "jest"
     },
     "imports": {
