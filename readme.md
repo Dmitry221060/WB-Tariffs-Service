@@ -2,7 +2,6 @@
 
 ## Table of contents
 - [About](#about)
-- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Documentation](#documentation)
